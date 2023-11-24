@@ -9,3 +9,46 @@ body{
 h1,h2,h3,p{
   margin: 0;
 }
+
+a{
+  text-decoration: none;
+  font-family: inherit;
+}
+.container{
+  padding: 2rem;
+}
+header{
+  background-color: steelblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo{
+  font-size: 2rem;
+  font-weight: 700;
+  color: bisque;
+}
+.create-btn{
+  padding: .5rem;
+  border: 2px solid whitesmoke;
+  color: bisque; 
+}
+.create-btn:hover{
+  border: 3px solid whitesmoke;
+}
+
+
+/* 
+HOMEPAGE 
+*/
+
+.homepage{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.recipe{
+  
+  border: 1px solid black;
+}
