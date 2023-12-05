@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useFetch } from "../hooks/useFetch"
+import RecipeList from "../components/RecipeList"
 
 export default function Home() {
   const [url, setUrl] = useState('http://localhost:3000/recipes')
@@ -12,15 +13,11 @@ export default function Home() {
   if (error) {
     return <h1>Error: {error.message }</h1>
   }
-
   return (
     <>
       <div className="homepage container">
-        {recipes && recipes.map((recipe) => (
-          <div className="recipe" key={recipe.id}>
-            <p>{recipe.title}</p>
-          </div>
-        )) }
+        {recipes && <RecipeList recipes={recipes} />
+        }
       </div>
     </>
   )
