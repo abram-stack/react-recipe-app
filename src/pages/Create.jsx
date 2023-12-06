@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import './create.css'
+import { useFetch } from '../hooks/useFetch'
 
 export default function Create() {
   const [title, setTitle] = useState('')
@@ -10,9 +11,14 @@ export default function Create() {
 
   const ingredientInput = useRef(null)
 
+  const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
+
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(title, ingredients, method, time)
+
+
+    // postData(returned from useFetch) will trigger useEffect (set the options state)
+    postData({title, ingredients, method, cookingTime: time + ' minutes' })
     setTitle('')
     setNewIngredients('')
     setIngredients([])
@@ -63,8 +69,8 @@ export default function Create() {
                 add
               </button>
             </div>
-            <p>
-              {ingredients.map((ing) => <em key={ing}>{ing}, </em>) }
+            <p>current ingredients:
+              {ingredients.map((ing) => <em key={ing}>  {ing}, </em>) }
             </p>
           </label>
 
