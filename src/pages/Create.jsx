@@ -1,6 +1,7 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './create.css'
 import { useFetch } from '../hooks/useFetch'
+import { useNavigate } from 'react-router-dom'
 
 export default function Create() {
   const [title, setTitle] = useState('')
@@ -10,22 +11,29 @@ export default function Create() {
   const [time, setTime] = useState('')
 
   const ingredientInput = useRef(null)
+  const navigate = useNavigate()
 
   const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
 
-  function handleSubmit(e) {
-    e.preventDefault()
 
+  useEffect(() => {
+    if (data) {
+      navigate('/')
+    }
+  }, [data])
+  
+   function handleSubmit(e) {
+     e.preventDefault()
 
-    // postData(returned from useFetch) will trigger useEffect (set the options state)
-    postData({title, ingredients, method, cookingTime: time + ' minutes' })
-    setTitle('')
-    setNewIngredients('')
-    setIngredients([])
-    setMethod('')
-    setTime('')
-  }
-
+     // postData(returned from useFetch) will trigger useEffect (set the options state)
+     postData({ title, ingredients, method, cookingTime: time + ' minutes' })
+     setTitle('')
+     setNewIngredients('')
+     setIngredients([])
+     setMethod('')
+     setTime('')
+   }
+  
   function handleAddIngredients(e) {
     e.preventDefault()
     const ing = newIngredients.trim()
