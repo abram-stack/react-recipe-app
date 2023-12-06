@@ -23,7 +23,7 @@ export default function Recipe() {
           <div className='recipe-info'>
             <p>Cooking time: {recipe.cookingTime}</p>
             <ul>
-              {recipe.ingredients.map(ingr => <li>{ingr}</li>)}
+              {recipe.ingredients.map(ingr => <li key={ingr}>{ingr}</li>)}
             </ul>
           </div>
           <p>{recipe.method}</p>

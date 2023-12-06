@@ -29,27 +29,30 @@
   font-size: .9rem;
   margin-top: 5px;
 }
-.recipe-list .card a{
+
+.btn {
   background-color: steelblue;
   color:bisque;
   display: block;
   width: 120px;
   border-radius: 5px;
+  border: none;
   padding: 8px 5px;
   text-align: center;
   margin: .5rem auto;
 }
-.recipe-list .card a:hover, .recipe-list .card a:focus{
+.btn:hover, .btn:focus
+{
   background-color: #b3d3ea;
   color: #2c5777;
 }
 
 
- .recipe-list .card a:focus {
+ .btn:focus{
    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
  }
 
- .recipe-list .card a:active {
+ .btn:active {
    background-color: #a0c7e4;
    box-shadow: none;
    color: #2c5777;

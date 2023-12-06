@@ -1,0 +1,49 @@
+.create-container{
+  max-width: 720px;
+  margin:2rem auto;
+  padding: 2rem 1rem;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+.create-container form{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.create-container form span{
+  margin-bottom: .5rem;
+  display: block;
+  font-weight: 600;
+}
+input, textarea{
+  color: #2c5777;
+  border: 1px solid #2c5777;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: whitesmoke;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+input, textarea:focus{
+    border: 1px solid #a0c7e4;
+}
+
+.btn-submit{
+  width: 100%;
+  font-size: 1em;
+  font-family: inherit;
+  cursor: pointer;
+} 
+.ingredients-container{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ingredients-container .btn{
+  margin:0 auto;
+  height: 100%;
+}
