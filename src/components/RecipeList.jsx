@@ -5,6 +5,13 @@ import React from 'react'
 
 export default function RecipeList({ recipes }) {
 
+  if(recipes.length === 0){
+    return (
+      <div className='container'>
+        <h1>No recipes to load...</h1>
+      </div>
+    )
+  }
   return (
     <>
       <div className='recipe-list'>

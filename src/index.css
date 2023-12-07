@@ -23,6 +23,11 @@ header{
   justify-content: space-between;
   align-items: center;
 }
+nav{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 
 .site-logo{
   font-size: 2rem;
