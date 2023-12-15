@@ -20,11 +20,11 @@
   box-shadow: steelblue 0 0 0 3px, transparent 0 0 0 0;
 }
 
-.recipe-list .card h3{
+.recipe--title{
   color: slategray;
   font-weight: 700;
 }
-.recipe-list .card div{
+.recipe--info{
   color: grey;
   font-size: .9rem;
   margin-top: 5px;

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import './create.css'
 import { useFetch } from '../hooks/useFetch'
 import { useNavigate } from 'react-router-dom'
+import { useTheme } from '../hooks/useTheme'
 
 export default function Create() {
   const [title, setTitle] = useState('')
@@ -15,6 +16,9 @@ export default function Create() {
 
   const { postData, data, error } = useFetch('http://localhost:3000/recipes', 'POST')
 
+  const { mode } = useTheme()
+
+  const modeClass = mode === 'dark' ? 'dark' : '' 
 
   useEffect(() => {
     if (data) {
@@ -49,7 +53,7 @@ export default function Create() {
   }
   return (
     <>
-      <div className='create-container'>
+      <div className={`create-container ${modeClass}`}>
         <h2>Create Recipe</h2>
 
         <form onSubmit={handleSubmit}>

@@ -51,5 +51,20 @@ HOMEPAGE
 .homepage{
   display: flex;
   flex-wrap: wrap;
+  transition: .3s;
 }
 
+.homepage.dark, .create-container.dark, .container.dark{
+  background-color: #3d5a80;
+  color: #98c1d9;
+}
+.dark, .dark .recipe--title, .dark .recipe--info{
+  color: whitesmoke;
+}
+
+.dark .recipe-list .card:hover {
+  box-shadow: whitesmoke 0 0 0 3px, transparent 0 0 0 0;
+}
+.dark .btn{
+  border: 1px solid whitesmoke;
+}

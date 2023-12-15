@@ -19,7 +19,7 @@ export default function Search() {
   }
   return (
     <>
-      <div className="container">
+      <div className="container dark">
         <h1>Search Result for: {queryFilter}</h1>
         { recipes && <RecipeList recipes={recipes}/>}
       </div>
